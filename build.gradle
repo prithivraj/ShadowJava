@@ -1,0 +1,28 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+    id 'org.jetbrains.kotlin.jvm' version '1.4.10'
+}
+
+import com.github.jengelman.gradle.plugins.shadow.tasks.ConfigureShadowRelocation
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+task relocateShadowJar(type: ConfigureShadowRelocation) {
+    target = tasks.shadowJar
+    prefix = "intercom" // Default value is "shadow"
+
+}
+
+tasks.shadowJar.dependsOn tasks.relocateShadowJar
+
+dependencies {
+    shadow localGroovy()
+    shadow gradleApi()
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation "com.squareup.okhttp3:okhttp:4.9.0"
+}
