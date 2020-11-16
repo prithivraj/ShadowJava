@@ -1,9 +1,13 @@
-package com.facebook.shimmer
+package com.pethotel.app
 
 import okhttp3.OkHttpClient
 
-class Shimmer {
-    fun test() {
+class PetHotel {
+    fun welcome() {
         val okHttpClient = OkHttpClient()
     }
+}
+
+fun main() {
+
 }

@@ -1,9 +1,10 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ConfigureShadowRelocation
+
 plugins {
-    id 'com.github.johnrengelman.shadow' version '6.1.0'
     id 'org.jetbrains.kotlin.jvm' version '1.4.10'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
 }
 
-import com.github.jengelman.gradle.plugins.shadow.tasks.ConfigureShadowRelocation
 
 group 'org.example'
 version '1.0-SNAPSHOT'
